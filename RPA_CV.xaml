@@ -1,0 +1,441 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="RPA_CV" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="RPA_CV_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.CV</x:String>
+      <x:String>UiPath.Shared.ObjectLibrary</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.CV.Activities</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.CV.Activities.Interfaces</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.OCR.Activities</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="RPA_CV" sap:VirtualizedContainerService.HintSize="716,729" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" ScrollOffset="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="b6b539d2-24e9-49f6-88da-5a425e67dfc3" DisplayName="CV Screen Scope" sap:VirtualizedContainerService.HintSize="434,706" sap2010:WorkflowViewState.IdRef="CVScope_2" SendOnPremData="False" Version="V6">
+      <p:CVScope.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" sap:VirtualizedContainerService.HintSize="400,165" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="a" KeyModifiers="None" SpecialKey="False">
+              <ui:SendHotkey.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="153df384-11a5-4058-a5d5-5ba26be609cb" Selector="&lt;html app='chrome.exe' title='Rpa Challenge' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:SendHotkey.Target>
+            </ui:SendHotkey>
+            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" sap:VirtualizedContainerService.HintSize="400,185" sap2010:WorkflowViewState.IdRef="SendHotkey_3" Key="l" KeyModifiers="None" SpecialKey="False">
+              <ui:SendHotkey.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ce7f8350-1da5-496a-a42f-cbbd873d0215" InformativeScreenshot="4e6474ebcb73b2f34da7e02266b3700d" Selector="&lt;html app='chrome.exe' title='Rpa Challenge' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:SendHotkey.Target>
+            </ui:SendHotkey>
+            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" sap:VirtualizedContainerService.HintSize="400,176" sap2010:WorkflowViewState.IdRef="SendHotkey_4" Key="m" KeyModifiers="None" SpecialKey="False">
+              <ui:SendHotkey.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="df394a84-30f5-4f24-892a-15a5acb5069e" InformativeScreenshot="4e6474ebcb73b2f34da7e02266b3700d" Selector="&lt;html app='chrome.exe' title='Rpa Challenge' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:SendHotkey.Target>
+            </ui:SendHotkey>
+          </Sequence>
+        </ActivityAction>
+      </p:CVScope.Body>
+      <p:CVScope.DesignTimeCacheContainer>
+        <uc:CvCacheContainer>
+          <uc:CvCacheContainer.Caches>
+            <scg:List x:TypeArguments="uc:CVCache" Capacity="4">
+              <uc:CVCache DataSent="False" DisplayName="1" Id="b6b539d2-24e9-49f6-88da-5a425e67dfc3" InformativeScreenshot="120a0a9e4e067b46288fcb2695c6dd94" LogicalPosition="0, 0" OcrText="v s 10Sep2024 Batch - Recordings X Class-5_UiPath_Studio_Explanat X Rpa Challenge X + _ X rpachallenge.com &quot;UiPath Browser Automation 24.10&quot; started debugging this browser Cancel X RPA Challenge Input Forms Shortest Path Movie Search Invoice Extraction RPA Stock Market Instructions EN Company Name 1. The goal of this challenge is to create a workflow that will input data from a spreadsheet into the form fields on the Address screen. 2. Beware! The fields will change position on the screen after every submission throughout 10 rounds thus the workflow First Name must correctly identify where each spreadsheet record must be typed every salman time. Email 3. The actual countdown of the challenge will begin once you click the Start button until then you may submit the form as many times as you wish without receiving penalties. Phone Number Good luck! Activate Windows Go to Settings to activate Windows. Role in Company DOWNLOAD FXCEL ^" Position="0, 0" ScreenshotGuid="ff4d0491-a61d-46ed-9d03-48db991d9a4d" ServerVersion="24.10.4.3">
+                <uc:CVCache.CvAnchorRelations>
+                  <scg:List x:TypeArguments="uc:AnchorRelationInfo" Capacity="8">
+                    <uc:AnchorRelationInfo IsTargetText="False" Target="25">
+                      <uc:AnchorRelationInfo.Anchors>
+                        <x:Array Type="x:Int32">
+                          <x:Int32>41</x:Int32>
+                          <x:Int32>42</x:Int32>
+                        </x:Array>
+                      </uc:AnchorRelationInfo.Anchors>
+                    </uc:AnchorRelationInfo>
+                    <uc:AnchorRelationInfo IsTargetText="False" Target="5">
+                      <uc:AnchorRelationInfo.Anchors>
+                        <x:Array Type="x:Int32">
+                          <x:Int32>88</x:Int32>
+                          <x:Int32>89</x:Int32>
+                        </x:Array>
+                      </uc:AnchorRelationInfo.Anchors>
+                    </uc:AnchorRelationInfo>
+                    <uc:AnchorRelationInfo IsTargetText="False" Target="13">
+                      <uc:AnchorRelationInfo.Anchors>
+                        <x:Array Type="x:Int32">
+                          <x:Int32>67</x:Int32>
+                        </x:Array>
+                      </uc:AnchorRelationInfo.Anchors>
+                    </uc:AnchorRelationInfo>
+                    <uc:AnchorRelationInfo IsTargetText="False" Target="9">
+                      <uc:AnchorRelationInfo.Anchors>
+                        <x:Array Type="x:Int32">
+                          <x:Int32>103</x:Int32>
+                        </x:Array>
+                      </uc:AnchorRelationInfo.Anchors>
+                    </uc:AnchorRelationInfo>
+                    <uc:AnchorRelationInfo IsTargetText="False" Target="17">
+                      <uc:AnchorRelationInfo.Anchors>
+                        <x:Array Type="x:Int32">
+                          <x:Int32>135</x:Int32>
+                          <x:Int32>136</x:Int32>
+                        </x:Array>
+                      </uc:AnchorRelationInfo.Anchors>
+                    </uc:AnchorRelationInfo>
+                    <uc:AnchorRelationInfo IsTargetText="False" Target="2">
+                      <uc:AnchorRelationInfo.Anchors>
+                        <x:Array Type="x:Int32">
+                          <x:Int32>15</x:Int32>
+                        </x:Array>
+                      </uc:AnchorRelationInfo.Anchors>
+                    </uc:AnchorRelationInfo>
+                  </scg:List>
+                </uc:CVCache.CvAnchorRelations>
+                <uc:CVCache.CvUiElements>
+                  <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="64">
+                    <uc:CvElementInfo Category="Button" Region="513, 3, 240, 39" />
+                    <uc:CvElementInfo Category="Button" Region="416, 92, 76, 40" />
+                    <uc:CvElementInfo Category="InputBox" Region="119, 45, 1074, 37" />
+                    <uc:CvElementInfo Category="ArrowButton" Region="1347, 138, 19, 19" />
+                    <uc:CvElementInfo Category="Icon" Region="521, 9, 21, 21" />
+                    <uc:CvElementInfo Category="InputBox" Region="445, 456, 455, 43" />
+                    <uc:CvElementInfo Category="Icon" Region="1207, 49, 24, 24" />
+                    <uc:CvElementInfo Category="Icon" Region="1157, 51, 23, 23" />
+                    <uc:CvElementInfo Category="Icon" Region="44, 8, 23, 22" />
+                    <uc:CvElementInfo Category="InputBox" Region="444, 545, 456, 42" />
+                    <uc:CvElementInfo Category="Icon" Region="1261, 52, 23, 19" />
+                    <uc:CvElementInfo Category="Button" Region="256, 209, 82, 41" />
+                    <uc:CvElementInfo Category="Icon" Region="84, 52, 20, 20" />
+                    <uc:CvElementInfo Category="InputBox" Region="445, 368, 455, 42" />
+                    <uc:CvElementInfo Category="Icon" Region="124, 50, 25, 25" />
+                    <uc:CvElementInfo Category="Icon" Region="1334, 50, 19, 25" />
+                    <uc:CvElementInfo Category="Icon" Region="283, 10, 21, 21" />
+                    <uc:CvElementInfo Category="InputBox" Region="444, 634, 457, 42" />
+                    <uc:CvElementInfo Category="CloseButton" Region="1333, 10, 19, 19" />
+                    <uc:CvElementInfo Category="Icon" Region="758, 10, 19, 19" />
+                    <uc:CvElementInfo Category="ArrowButton" Region="1347, 709, 19, 19" />
+                    <uc:CvElementInfo Category="MinimizeButton" Region="1240, 10, 23, 19" />
+                    <uc:CvElementInfo Category="CloseButton" Region="1330, 103, 19, 19" />
+                    <uc:CvElementInfo Category="Icon" Region="1294, 57, 27, 20" />
+                    <uc:CvElementInfo Category="CloseButton" Region="723, 11, 18, 18" />
+                    <uc:CvElementInfo Category="InputBox" Region="446, 277, 453, 45" />
+                    <uc:CvElementInfo Category="MaximizeButton" Region="1287, 10, 20, 20" />
+                    <uc:CvElementInfo Category="Button" Region="263, 2, 252, 39" />
+                    <uc:CvElementInfo Category="CloseButton" Region="486, 11, 16, 17" />
+                    <uc:CvElementInfo Category="CloseButton" Region="247, 11, 17, 17" />
+                    <uc:CvElementInfo Category="Icon" Region="11, 52, 21, 20" />
+                    <uc:CvElementInfo Category="ArrowButton" Region="5, 5, 29, 29" />
+                    <uc:CvElementInfo Category="Icon" Region="46, 51, 21, 22" />
+                    <uc:CvElementInfo Category="Button" Region="22, 1, 256, 38" />
+                    <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="46, 51, 22, 22" />
+                    <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="446, 460, 62, 27" />
+                    <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="520, 3, 233, 39" />
+                    <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="5, 5, 32, 30" />
+                    <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="10, 52, 22, 21" />
+                    <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="293, 714, 26, 14" />
+                    <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="10, 705, 317, 23" />
+                    <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="446, 460, 63, 28" />
+                    <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="445, 690, 462, 35" />
+                    <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="438, 686, 909, 39" />
+                    <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="4, 4, 32, 31" />
+                    <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="443, 252, 455, 31" />
+                    <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="8, 206, 245, 45" />
+                    <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="1196, 140, 150, 64" />
+                  </scg:List>
+                </uc:CVCache.CvUiElements>
+                <uc:CVCache.OcrTexts>
+                  <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="153">
+                    <uc:OcrTextInfo Region="14, 15, 11, 9" Text="v" />
+                    <uc:OcrTextInfo Region="49, 14, 7, 10" Text="s" />
+                    <uc:OcrTextInfo Region="72, 14, 59, 15" Text="10Sep2024" />
+                    <uc:OcrTextInfo Region="133, 14, 31, 12" Text="Batch" />
+                    <uc:OcrTextInfo Region="166, 16, 5, 9" Text="-" />
+                    <uc:OcrTextInfo Region="173, 14, 60, 15" Text="Recordings" />
+                    <uc:OcrTextInfo Region="250, 14, 11, 11" Text="X" />
+                    <uc:OcrTextInfo Region="309, 14, 167, 15" Text="Class-5_UiPath_Studio_Explanat" />
+                    <uc:OcrTextInfo Region="488, 14, 11, 11" Text="X" />
+                    <uc:OcrTextInfo Region="547, 14, 22, 15" Text="Rpa" />
+                    <uc:OcrTextInfo Region="570, 14, 55, 15" Text="Challenge" />
+                    <uc:OcrTextInfo Region="726, 14, 11, 11" Text="X" />
+                    <uc:OcrTextInfo Region="761, 13, 13, 13" Text="+" />
+                    <uc:OcrTextInfo Region="1244, 8, 13, 15" Text="_" />
+                    <uc:OcrTextInfo Region="1336, 13, 13, 13" Text="X" />
+                    <uc:OcrTextInfo Region="156, 56, 110, 16" Text="rpachallenge.com" />
+                    <uc:OcrTextInfo Region="15, 106, 44, 13" Text="&quot;UiPath" />
+                    <uc:OcrTextInfo Region="61, 107, 48, 12" Text="Browser" />
+                    <uc:OcrTextInfo Region="110, 107, 70, 12" Text="Automation" />
+                    <uc:OcrTextInfo Region="181, 107, 38, 12" Text="24.10&quot;" />
+                    <uc:OcrTextInfo Region="221, 106, 41, 13" Text="started" />
+                    <uc:OcrTextInfo Region="265, 106, 64, 16" Text="debugging" />
+                    <uc:OcrTextInfo Region="331, 106, 22, 13" Text="this" />
+                    <uc:OcrTextInfo Region="355, 106, 49, 13" Text="browser" />
+                    <uc:OcrTextInfo Region="434, 106, 41, 13" Text="Cancel" />
+                    <uc:OcrTextInfo Region="1333, 106, 13, 13" Text="X" />
+                    <uc:OcrTextInfo Region="19, 158, 61, 26" Text="RPA" />
+                    <uc:OcrTextInfo Region="86, 155, 165, 37" Text="Challenge" />
+                    <uc:OcrTextInfo Region="666, 163, 41, 18" Text="Input" />
+                    <uc:OcrTextInfo Region="708, 163, 48, 14" Text="Forms" />
+                    <uc:OcrTextInfo Region="784, 163, 64, 14" Text="Shortest" />
+                    <uc:OcrTextInfo Region="850, 163, 36, 14" Text="Path" />
+                    <uc:OcrTextInfo Region="914, 163, 45, 15" Text="Movie" />
+                    <uc:OcrTextInfo Region="961, 163, 55, 14" Text="Search" />
+                    <uc:OcrTextInfo Region="1044, 162, 56, 16" Text="Invoice" />
+                    <uc:OcrTextInfo Region="1102, 163, 75, 14" Text="Extraction" />
+                    <uc:OcrTextInfo Region="1205, 163, 31, 14" Text="RPA" />
+                    <uc:OcrTextInfo Region="1237, 163, 43, 14" Text="Stock" />
+                    <uc:OcrTextInfo Region="1282, 163, 53, 14" Text="Market" />
+                    <uc:OcrTextInfo Region="19, 217, 143, 24" Text="Instructions" />
+                    <uc:OcrTextInfo Region="288, 222, 20, 14" Text="EN" />
+                    <uc:OcrTextInfo Region="447, 258, 62, 14" Text="Company" />
+                    <uc:OcrTextInfo Region="511, 258, 37, 11" Text="Name" />
+                    <uc:OcrTextInfo Region="19, 293, 10, 13" Text="1." />
+                    <uc:OcrTextInfo Region="31, 293, 26, 13" Text="The" />
+                    <uc:OcrTextInfo Region="59, 293, 33, 17" Text="goal" />
+                    <uc:OcrTextInfo Region="93, 292, 16, 14" Text="of" />
+                    <uc:OcrTextInfo Region="110, 292, 26, 14" Text="this" />
+                    <uc:OcrTextInfo Region="138, 293, 70, 17" Text="challenge" />
+                    <uc:OcrTextInfo Region="209, 292, 13, 14" Text="is" />
+                    <uc:OcrTextInfo Region="223, 293, 17, 13" Text="to" />
+                    <uc:OcrTextInfo Region="241, 293, 47, 13" Text="create" />
+                    <uc:OcrTextInfo Region="289, 295, 11, 11" Text="a" />
+                    <uc:OcrTextInfo Region="19, 312, 64, 14" Text="workflow" />
+                    <uc:OcrTextInfo Region="83, 313, 31, 13" Text="that" />
+                    <uc:OcrTextInfo Region="115, 313, 23, 13" Text="will" />
+                    <uc:OcrTextInfo Region="140, 312, 37, 17" Text="input" />
+                    <uc:OcrTextInfo Region="179, 313, 34, 13" Text="data" />
+                    <uc:OcrTextInfo Region="215, 312, 34, 14" Text="from" />
+                    <uc:OcrTextInfo Region="251, 315, 11, 11" Text="a" />
+                    <uc:OcrTextInfo Region="20, 333, 88, 16" Text="spreadsheet" />
+                    <uc:OcrTextInfo Region="110, 332, 27, 14" Text="into" />
+                    <uc:OcrTextInfo Region="139, 333, 24, 13" Text="the" />
+                    <uc:OcrTextInfo Region="165, 332, 34, 14" Text="form" />
+                    <uc:OcrTextInfo Region="200, 332, 39, 14" Text="fields" />
+                    <uc:OcrTextInfo Region="241, 335, 19, 11" Text="on" />
+                    <uc:OcrTextInfo Region="261, 332, 25, 14" Text="the" />
+                    <uc:OcrTextInfo Region="447, 346, 51, 12" Text="Address" />
+                    <uc:OcrTextInfo Region="20, 356, 51, 11" Text="screen." />
+                    <uc:OcrTextInfo Region="20, 394, 13, 13" Text="2." />
+                    <uc:OcrTextInfo Region="34, 394, 57, 14" Text="Beware!" />
+                    <uc:OcrTextInfo Region="93, 394, 26, 13" Text="The" />
+                    <uc:OcrTextInfo Region="121, 393, 38, 14" Text="fields" />
+                    <uc:OcrTextInfo Region="161, 393, 23, 14" Text="will" />
+                    <uc:OcrTextInfo Region="186, 394, 54, 17" Text="change" />
+                    <uc:OcrTextInfo Region="242, 393, 56, 18" Text="position" />
+                    <uc:OcrTextInfo Region="20, 417, 20, 11" Text="on" />
+                    <uc:OcrTextInfo Region="41, 414, 24, 14" Text="the" />
+                    <uc:OcrTextInfo Region="67, 417, 48, 11" Text="screen" />
+                    <uc:OcrTextInfo Region="117, 414, 34, 14" Text="after" />
+                    <uc:OcrTextInfo Region="153, 417, 40, 15" Text="every" />
+                    <uc:OcrTextInfo Region="194, 414, 79, 15" Text="submission" />
+                    <uc:OcrTextInfo Region="20, 434, 79, 18" Text="throughout" />
+                    <uc:OcrTextInfo Region="100, 435, 15, 13" Text="10" />
+                    <uc:OcrTextInfo Region="117, 435, 50, 13" Text="rounds" />
+                    <uc:OcrTextInfo Region="168, 435, 32, 13" Text="thus" />
+                    <uc:OcrTextInfo Region="201, 435, 24, 13" Text="the" />
+                    <uc:OcrTextInfo Region="227, 434, 63, 14" Text="workflow" />
+                    <uc:OcrTextInfo Region="448, 435, 25, 11" Text="First" />
+                    <uc:OcrTextInfo Region="475, 434, 38, 12" Text="Name" />
+                    <uc:OcrTextInfo Region="20, 456, 37, 13" Text="must" />
+                    <uc:OcrTextInfo Region="59, 456, 62, 17" Text="correctly" />
+                    <uc:OcrTextInfo Region="123, 455, 52, 18" Text="identify" />
+                    <uc:OcrTextInfo Region="176, 456, 44, 13" Text="where" />
+                    <uc:OcrTextInfo Region="222, 455, 37, 14" Text="each" />
+                    <uc:OcrTextInfo Region="20, 476, 88, 17" Text="spreadsheet" />
+                    <uc:OcrTextInfo Region="110, 476, 46, 14" Text="record" />
+                    <uc:OcrTextInfo Region="159, 476, 37, 13" Text="must" />
+                    <uc:OcrTextInfo Region="197, 476, 19, 13" Text="be" />
+                    <uc:OcrTextInfo Region="218, 475, 42, 18" Text="typed" />
+                    <uc:OcrTextInfo Region="261, 477, 40, 16" Text="every" />
+                    <uc:OcrTextInfo Region="448, 467, 57, 14" Text="salman" />
+                    <uc:OcrTextInfo Region="20, 496, 36, 14" Text="time." />
+                    <uc:OcrTextInfo Region="448, 523, 33, 12" Text="Email" />
+                    <uc:OcrTextInfo Region="20, 537, 13, 13" Text="3." />
+                    <uc:OcrTextInfo Region="34, 536, 27, 14" Text="The" />
+                    <uc:OcrTextInfo Region="63, 536, 45, 14" Text="actual" />
+                    <uc:OcrTextInfo Region="110, 537, 80, 13" Text="countdown" />
+                    <uc:OcrTextInfo Region="191, 536, 16, 14" Text="of" />
+                    <uc:OcrTextInfo Region="208, 536, 24, 14" Text="the" />
+                    <uc:OcrTextInfo Region="234, 536, 70, 18" Text="challenge" />
+                    <uc:OcrTextInfo Region="19, 557, 24, 14" Text="will" />
+                    <uc:OcrTextInfo Region="45, 557, 41, 18" Text="begin" />
+                    <uc:OcrTextInfo Region="87, 560, 37, 11" Text="once" />
+                    <uc:OcrTextInfo Region="125, 560, 27, 15" Text="you" />
+                    <uc:OcrTextInfo Region="154, 557, 33, 14" Text="click" />
+                    <uc:OcrTextInfo Region="188, 558, 24, 13" Text="the" />
+                    <uc:OcrTextInfo Region="214, 558, 35, 13" Text="Start" />
+                    <uc:OcrTextInfo Region="250, 558, 48, 13" Text="button" />
+                    <uc:OcrTextInfo Region="20, 577, 31, 14" Text="until" />
+                    <uc:OcrTextInfo Region="53, 578, 33, 13" Text="then" />
+                    <uc:OcrTextInfo Region="87, 580, 27, 15" Text="you" />
+                    <uc:OcrTextInfo Region="116, 580, 33, 15" Text="may" />
+                    <uc:OcrTextInfo Region="151, 578, 50, 13" Text="submit" />
+                    <uc:OcrTextInfo Region="202, 578, 24, 13" Text="the" />
+                    <uc:OcrTextInfo Region="227, 577, 35, 15" Text="form" />
+                    <uc:OcrTextInfo Region="264, 580, 19, 11" Text="as" />
+                    <uc:OcrTextInfo Region="20, 600, 42, 15" Text="many" />
+                    <uc:OcrTextInfo Region="63, 598, 40, 14" Text="times" />
+                    <uc:OcrTextInfo Region="105, 601, 18, 11" Text="as" />
+                    <uc:OcrTextInfo Region="125, 601, 27, 15" Text="you" />
+                    <uc:OcrTextInfo Region="153, 598, 33, 14" Text="wish" />
+                    <uc:OcrTextInfo Region="188, 598, 53, 14" Text="without" />
+                    <uc:OcrTextInfo Region="242, 598, 65, 18" Text="receiving" />
+                    <uc:OcrTextInfo Region="20, 619, 67, 16" Text="penalties." />
+                    <uc:OcrTextInfo Region="447, 612, 39, 11" Text="Phone" />
+                    <uc:OcrTextInfo Region="488, 611, 51, 12" Text="Number" />
+                    <uc:OcrTextInfo Region="20, 660, 39, 13" Text="Good" />
+                    <uc:OcrTextInfo Region="61, 659, 33, 14" Text="luck!" />
+                    <uc:OcrTextInfo Region="1071, 653, 73, 17" Text="Activate" />
+                    <uc:OcrTextInfo Region="1147, 652, 83, 18" Text="Windows" />
+                    <uc:OcrTextInfo Region="1072, 677, 20, 14" Text="Go" />
+                    <uc:OcrTextInfo Region="1094, 678, 16, 13" Text="to" />
+                    <uc:OcrTextInfo Region="1113, 677, 54, 17" Text="Settings" />
+                    <uc:OcrTextInfo Region="1169, 678, 16, 13" Text="to" />
+                    <uc:OcrTextInfo Region="1188, 677, 53, 14" Text="activate" />
+                    <uc:OcrTextInfo Region="1243, 677, 67, 14" Text="Windows." />
+                    <uc:OcrTextInfo Region="447, 700, 27, 12" Text="Role" />
+                    <uc:OcrTextInfo Region="476, 700, 12, 12" Text="in" />
+                    <uc:OcrTextInfo Region="490, 701, 61, 14" Text="Company" />
+                    <uc:OcrTextInfo Region="80, 716, 92, 12" Text="DOWNLOAD" />
+                    <uc:OcrTextInfo Region="175, 716, 46, 12" Text="FXCEL" />
+                    <uc:OcrTextInfo Region="293, 715, 24, 13" Text="^" />
+                  </scg:List>
+                </uc:CVCache.OcrTexts>
+              </uc:CVCache>
+            </scg:List>
+          </uc:CvCacheContainer.Caches>
+        </uc:CvCacheContainer>
+      </p:CVScope.DesignTimeCacheContainer>
+      <p:CVScope.OCREngine>
+        <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+          <ActivityFunc.Argument>
+            <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+          </ActivityFunc.Argument>
+          <p1:UiPathScreenOCR ApiKey="{x:Null}" Endpoint="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Text="{x:Null}" UseAccents="{x:Null}" UseLocalServer="{x:Null}" ComputeSkewAngle="False" ExtractWords="True" sap:VirtualizedContainerService.HintSize="400,25" sap2010:WorkflowViewState.IdRef="UiPathScreenOCR_2" Image="[Image]" Language="en" NoopExecution="False" Profile="Screen" Scale="1" Timeout="100000" />
+        </ActivityFunc>
+      </p:CVScope.OCREngine>
+      <p:CVScope.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c26292c6-7910-48c0-96a2-9fa6781dc70e" Selector="&lt;html app='chrome.exe' title='Rpa Challenge' /&gt;">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </p:CVScope.Target>
+      <p:CVScope.UseLocalServer>
+        <InArgument x:TypeArguments="x:Boolean" />
+      </p:CVScope.UseLocalServer>
+    </p:CVScope>
+  </Sequence>
+</Activity>
